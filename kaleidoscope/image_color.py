@@ -10,6 +10,9 @@ def rect_median_color(img, x0, x1, y0, y1):
     average_color_per_row = np.average(img[y0:y1, x0:x1], axis=0)
     return np.average(average_color_per_row, axis=0)
 
+def resize(img, width, height):
+    return cv2.resize(img, (100, 50)) 
+
 if __name__ == '__main__':
     # print median_color(sys.argv[1])
     print ""
