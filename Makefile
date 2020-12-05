@@ -6,4 +6,4 @@ build:
 
 .PHONY: run
 run: build
-	docker run -v /Volumes/Kaleidoscope/Fotos:/images kaleidoscope:latest
+	docker run -v $(PWD)/images:/images kaleidoscope:latest
