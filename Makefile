@@ -1,4 +1,5 @@
-
+INPUT_DIR ?= "${PWD}/images"
+TARGET_IMAGE ?= "input.jpg"
 
 .PHONY: build
 build:
@@ -6,4 +7,10 @@ build:
 
 .PHONY: run
 run: build
-	docker run -v $(PWD)/images:/images kaleidoscope:latest
+	docker run -e TARGET_IMAGE=$(TARGET_IMAGE) -v $(INPUT_DIR):/images kaleidoscope:latest
+
+
+.PHONY: convert-heic
+convert-heic:
+	docker build heictojpeg -t heictojpeg:latest
+	docker run -v $(INPUT_DIR):/images heictojpeg:latest

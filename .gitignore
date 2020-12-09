@@ -1,3 +1,4 @@
 kaleidoscope/*.txt
 **/*.jpg
-images/*.jpg
+images
+*.tgz
